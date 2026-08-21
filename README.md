@@ -2,10 +2,10 @@
 
 Server setup and hardening scripts for a private development host.
 
-## Ubuntu 24.04 hardening
+## Ubuntu 26.04 hardening
 
 [`scripts/harden-ubuntu-server.sh`](scripts/harden-ubuntu-server.sh) hardens an
-Ubuntu 24.04 server while keeping SSH password login available for the chosen
+Ubuntu 26.04 server while keeping SSH password login available for the chosen
 administrator account.
 
 Before running it, confirm you have console access or an active SSH session.

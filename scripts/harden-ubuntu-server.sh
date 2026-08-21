@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Harden an Ubuntu 24.04 server after verifying out-of-band console access.
+# Harden an Ubuntu 26.04 server after verifying out-of-band console access.
 #
 # Required:
 #   ADMIN_USER=genos RESET_UFW=yes \
@@ -35,11 +35,11 @@ validate_inputs() {
   [[ -n "${home_dir}" ]] || die "Could not determine the home directory for ${ADMIN_USER}."
 }
 
-require_ubuntu_2404() {
+require_ubuntu_2604() {
   # shellcheck disable=SC1091
   source /etc/os-release
-  [[ "${ID:-}" == "ubuntu" && "${VERSION_ID:-}" == "24.04" ]] \
-    || die "This script supports Ubuntu 24.04 only."
+  [[ "${ID:-}" == "ubuntu" && "${VERSION_ID:-}" == "26.04" ]] \
+    || die "This script supports Ubuntu 26.04 only."
 }
 
 configure_automatic_updates() {
@@ -124,7 +124,7 @@ EOF
 
 main() {
   require_root
-  require_ubuntu_2404
+  require_ubuntu_2604
   validate_inputs
 
   apt-get update
